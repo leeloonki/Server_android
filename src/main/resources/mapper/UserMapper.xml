@@ -3,14 +3,14 @@
 <mapper namespace="com.example.tools.mapper.UserMapper">
 
     <insert id="InsertUser" parameterType="com.example.tools.pojo.User" >
-        insert into tb_user(username, password, age, gender) VALUES
-        (#{username},#{password},#{age},#{gender})
+        insert into tb_user(username, password, email, gender) VALUES
+        (#{username},#{password},#{email},#{gender})
     </insert>
     <delete id="DeleteUser" parameterType="int">
         delete from tb_user where id = #{id}
     </delete>
     <update id="UpdateUser" parameterType="com.example.tools.pojo.User">
-        update tb_user set username=#{username},password=#{password},age=#{age},gender=#{gender} where id=#{id}
+        update tb_user set username=#{username},password=#{password},email=#{email},gender=#{gender} where id=#{id}
     </update>
     <select id="SelectUser" parameterType="string" resultType="com.example.tools.pojo.User">
         select * from tb_user where username = #{username}

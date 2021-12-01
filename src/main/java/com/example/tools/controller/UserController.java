@@ -14,15 +14,16 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
+    LoginData loginData = new LoginData();
+    RespCode respCode = new RespCode();
     @Autowired
     private UserService userService;
     @RequestMapping("/user/signin")
-    public LoginData getName(@RequestBody voUser vouser) {
+
+    public LoginData SignIn(@RequestBody voUser vouser) {
 
         System.out.println("password: "+ vouser.getPassword());
         User user = userService.SelectUser(vouser.getUsername());
-        LoginData loginData = new LoginData();
-        RespCode respCode = new RespCode();
         if(user==null){
             user = new User();
             loginData.setUser(user);
@@ -42,6 +43,26 @@ public class UserController {
         System.out.println("password2: "+ user.getPassword());
         loginData.setRespCode(respCode);
         System.out.println(loginData);
+        return loginData;
+    }
+
+    @RequestMapping("/user/signup")
+    public LoginData SignUp(@RequestBody User user) {
+        System.out.println(user);
+        if(userService.SelectUser(user.getUsername())==null){
+            int res = userService.InsertUser(user);
+            if(res==1){
+                respCode.setRespCode_code(200);
+                respCode.setRespCode_msg("注册成功");
+                loginData.setRespCode(respCode);
+                loginData.setUser(user);
+            }
+        }else{
+            respCode.setRespCode_msg("用户名已存在");
+            respCode.setRespCode_code(400);
+            loginData.setUser(user);
+            loginData.setRespCode(respCode);
+        }
         return loginData;
     }
 }
