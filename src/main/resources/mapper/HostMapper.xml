@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.tools.mapper.HostMapper">
+    <insert id="InsertHost" parameterType="com.example.tools.pojo.Host">
+        insert into tb_host(uid, host, port, username, password) VALUES
+            (#{uid},#{host},#{port},#{username},#{password})
+    </insert>
+    <update id="UpdateHost">
+        update tb_host set uid=#{uid},host=#{host},port=#{port},username=#{username},password=#{password} where id=#{id}
+    </update>
+    <delete id="DeleteHost">
+        delete from tb_host where id = #{id}
+    </delete>
+    <select id="SelectAllHost" resultType="com.example.tools.pojo.Host">
+        select * from tb_host where uid = #{uid}
+    </select>
+    <select id="SelectHost" resultType="com.example.tools.pojo.Host">
+        select * from tb_host where uid = #{uid} and host = #{host}
+    </select>
+
+</mapper>

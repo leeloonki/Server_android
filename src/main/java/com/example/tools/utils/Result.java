@@ -1,14 +1,13 @@
 package com.example.tools.utils;
 
-import com.example.tools.pojo.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @AllArgsConstructor
+@Data
 @NoArgsConstructor
-public class LoginData {
-    RespCode respCode;
-    User user;
+public class Result <T>{
+    public RespCode respCode;
+    public T data;
 }

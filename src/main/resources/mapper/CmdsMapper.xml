@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.tools.mapper.CmdsMapper">
+    <insert id="InsertCmd" parameterType="com.example.tools.pojo.Cmds">
+        insert into tb_cmds(uid,host, command, cmdtime) VALUES
+            (#{uid},#{host},#{command},#{cmdtime})
+    </insert>
+    <delete id="DeleteCmd">
+        delete from tb_cmds where id = #{id}
+    </delete>
+    <select id="SelectCmd" resultType="com.example.tools.pojo.Cmds">
+        select * from tb_cmds where uid =#{uid}
+    </select>
+</mapper>
