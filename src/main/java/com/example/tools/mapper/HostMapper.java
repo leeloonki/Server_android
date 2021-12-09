@@ -2,7 +2,6 @@ package com.example.tools.mapper;
 
 
 import com.example.tools.pojo.Host;
-import com.example.tools.pojo.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

@@ -1,13 +1,11 @@
 package com.example.tools.controller;
 
 import com.example.tools.pojo.Host;
-import com.example.tools.pojo.User;
 import com.example.tools.service.HostService;
 import com.example.tools.utils.RespCode;
 import com.example.tools.utils.Result;
 import com.example.tools.vo.Hid;
 import com.example.tools.vo.Uid;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

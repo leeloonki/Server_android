@@ -1,10 +1,7 @@
 package com.example.tools.service;
 
 import com.example.tools.mapper.HostMapper;
-import com.example.tools.mapper.UserMapper;
 import com.example.tools.pojo.Host;
-import com.example.tools.pojo.User;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
