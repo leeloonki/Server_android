@@ -25,6 +25,7 @@ public class UserController {
         User user = userService.SelectUser(vouser.getUsername());
 
         if(user==null){
+            userResult.setData(null);
             respCode.setRespCode_code(400);
             respCode.setRespCode_msg("用户不存在");
         }else{
