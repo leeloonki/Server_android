@@ -15,5 +15,5 @@ public interface CmdsMapper {
     //    改
 //    int UpdateCmd(Cmds cmds);
     //    查寻某个用户执行的所有操作
-    List<Cmds> SelectCmd(@Param("uid") String uid);
+    List<Cmds> SelectCmd(@Param("uid") int uid);
 }

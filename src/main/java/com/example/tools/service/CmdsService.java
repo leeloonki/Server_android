@@ -21,7 +21,7 @@ public class CmdsService {
         return cmdsMapper.DeleteCmd(id);
     }
 
-    public List<Cmds> SelectAllCmd(String uid){
+    public List<Cmds> SelectAllCmd(int uid){
         return cmdsMapper.SelectCmd(uid);
     }
 }
