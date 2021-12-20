@@ -5,12 +5,22 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/db_user?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    url: jdbc:mysql://81.68.127.14:3306/db_user?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
     username: root
-    password: 123456
-
-#本地数据库密码123456
-#服务器917708562
+    password: 917708562
 mybatis:
     mapper-locations: classpath:mapper/*.xml
 # classpath:是resources  resources/mapper/*.xml
+# jdbc连接时必须使用公网ip,部署服务器使用下行
+#
+#  url: jdbc:mysql://81.68.127.14:3306/db_user?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+#  username: root
+#  password: 917708562
+
+
+#   本地调试，使用本地数据库
+#  url: jdbc:mysql://localhost:3306/db_user?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+#  username: root
+#  password: 123456
+
+
